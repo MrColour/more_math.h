@@ -56,6 +56,15 @@ run:
 	gcc $(FLAGS) $(INCLUDES) main.c $(NAME)
 	@./a.out
 
-renew:
+update:
 	git pull
 	make re
+
+# Assumes you git cloned into a dir called lib
+# Copy this into your primary Makefile
+MORE_MATH_LIB = lib/more_math.a
+
+$(MORE_MATH_LIB):
+	make -C lib/more_math
+	cp lib/more_math/includes/* ./includes/
+	mv lib/more_math/more_math.a ./lib
