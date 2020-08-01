@@ -55,3 +55,7 @@ run:
 	@echo "\033[1m\033[32m$(NAME)\033[0m"
 	gcc $(FLAGS) $(INCLUDES) main.c $(NAME)
 	@./a.out
+
+renew:
+	git pull
+	make re
