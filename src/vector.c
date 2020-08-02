@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/31 21:07:53 by home              #+#    #+#             */
-/*   Updated: 2020/08/02 03:44:50 by home             ###   ########.fr       */
+/*   Updated: 2020/08/02 03:48:19 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,6 @@ void	tangent_vector(t_vector2f *dest, t_vector2f axis, t_vector2f vec)
 
 	result = vec.x * axis.y + vec.y * axis.x;
 
-	dest->x = (result * axis.y * -1) / (squared_h);
+	dest->x = (result * axis.y) / (squared_h);
 	dest->y = result * axis.x / (squared_h);
 }
