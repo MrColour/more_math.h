@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/31 21:07:53 by home              #+#    #+#             */
-/*   Updated: 2020/08/02 02:50:36 by home             ###   ########.fr       */
+/*   Updated: 2020/08/02 03:44:50 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,38 +35,26 @@ void	vector_add(t_vector2f *dest, t_vector2f a, t_vector2f b)
 
 void	normal_vector(t_vector2f *dest, t_vector2f axis, t_vector2f vec)
 {
-	double	h;
 	double	result;
+	double	squared_h;
 
-	h = sqrt(axis.x * axis.x + axis.y * axis.y);
+	squared_h = axis.x * axis.x + axis.y * axis.y;
 
-	double	a;
-	double	b;
+	result = vec.x * axis.x + vec.y * axis.y;
 
-	a = axis.x / h;
-	b = axis.y / h;
-
-	result = vec.x * a + vec.y * b;
-
-	dest->x = result * a;
-	dest->y = result * b;
+	dest->x = result * axis.x / (squared_h);
+	dest->y = result * axis.y / (squared_h);
 }
 
 void	tangent_vector(t_vector2f *dest, t_vector2f axis, t_vector2f vec)
 {
-	double	h;
 	double	result;
+	double	squared_h;
 
-	h = sqrt(axis.x * axis.x + axis.y * axis.y);
+	squared_h = axis.x * axis.x + axis.y * axis.y;
 
-	double	a;
-	double	b;
+	result = vec.x * axis.y + vec.y * axis.x;
 
-	a = axis.x / h;
-	b = axis.y / h;
-
-	result = -1 * vec.x * b + vec.y * a;
-
-	dest->x = result * b * -1;
-	dest->y = result * a;
+	dest->x = (result * axis.y * -1) / (squared_h);
+	dest->y = result * axis.x / (squared_h);
 }
