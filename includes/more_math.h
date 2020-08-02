@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/31 20:30:47 by home              #+#    #+#             */
-/*   Updated: 2020/08/01 21:58:44 by home             ###   ########.fr       */
+/*   Updated: 2020/08/02 02:28:40 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@
 
 double	vector_length(t_vector2f vector);
 void	fill_vector(t_vector2f *vector, double x, double y);
+
+void	normal_vector(t_vector2f *dest, t_vector2f axis, t_vector2f vec);
 
 void	out_circle(t_circle circle, void (*f)(void *, int, int), void *meta_data);
 
