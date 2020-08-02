@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/31 21:07:53 by home              #+#    #+#             */
-/*   Updated: 2020/08/02 02:26:52 by home             ###   ########.fr       */
+/*   Updated: 2020/08/02 02:50:36 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,23 @@ void	normal_vector(t_vector2f *dest, t_vector2f axis, t_vector2f vec)
 
 	dest->x = result * a;
 	dest->y = result * b;
+}
+
+void	tangent_vector(t_vector2f *dest, t_vector2f axis, t_vector2f vec)
+{
+	double	h;
+	double	result;
+
+	h = sqrt(axis.x * axis.x + axis.y * axis.y);
+
+	double	a;
+	double	b;
+
+	a = axis.x / h;
+	b = axis.y / h;
+
+	result = -1 * vec.x * b + vec.y * a;
+
+	dest->x = result * b * -1;
+	dest->y = result * a;
 }
