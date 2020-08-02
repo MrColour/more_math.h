@@ -7,6 +7,7 @@ BIN_DIR = bin/
 
 # List of all the source files.
 SRC_NAMES = \
+	circle \
 	radian \
 	vector \
 
