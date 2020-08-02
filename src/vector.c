@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/31 21:07:53 by home              #+#    #+#             */
-/*   Updated: 2020/07/31 23:47:26 by home             ###   ########.fr       */
+/*   Updated: 2020/08/02 02:26:52 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,23 @@ void	vector_add(t_vector2f *dest, t_vector2f a, t_vector2f b)
 {
 	dest->x = a.x + b.x;
 	dest->y = a.y + b.y;
+}
+
+void	normal_vector(t_vector2f *dest, t_vector2f axis, t_vector2f vec)
+{
+	double	h;
+	double	result;
+
+	h = sqrt(axis.x * axis.x + axis.y * axis.y);
+
+	double	a;
+	double	b;
+
+	a = axis.x / h;
+	b = axis.y / h;
+
+	result = vec.x * a + vec.y * b;
+
+	dest->x = result * a;
+	dest->y = result * b;
 }
