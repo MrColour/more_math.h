@@ -6,12 +6,12 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/31 20:30:47 by home              #+#    #+#             */
-/*   Updated: 2020/08/02 02:50:47 by home             ###   ########.fr       */
+/*   Updated: 2020/08/16 04:22:45 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MOORE_MATH_H
-# define MOORE_MATH_H
+#ifndef MORE_MATH_H
+# define MORE_MATH_H
 
 # include <math.h>
 # include <stdarg.h>
