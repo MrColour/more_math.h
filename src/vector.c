@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/31 21:07:53 by home              #+#    #+#             */
-/*   Updated: 2020/08/02 03:57:40 by home             ###   ########.fr       */
+/*   Updated: 2020/08/17 00:25:52 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,23 @@ void	vector_add(t_vector2f *dest, t_vector2f a, t_vector2f b)
 {
 	dest->x = a.x + b.x;
 	dest->y = a.y + b.y;
+}
+
+void	vector_scale(t_vector2f *dest, t_vector2f vec, double scale)
+{
+	dest->x = vec.x * scale;
+	dest->y = vec.y * scale;
+}
+
+void	vector_rescale(t_vector2f *dest, t_vector2f vec, double unit)
+{
+	double	scale;
+	double	length;
+
+	length = vector_length(vec);
+	scale = length / unit;
+
+	vector_scale(dest, vec, scale);
 }
 
 void	normal_vector(t_vector2f *dest, t_vector2f axis, t_vector2f vec)
