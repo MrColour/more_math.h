@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/31 21:07:53 by home              #+#    #+#             */
-/*   Updated: 2020/08/17 00:32:07 by home             ###   ########.fr       */
+/*   Updated: 2020/08/17 00:42:56 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	vector_rescale(t_vector2f *dest, t_vector2f vec, double unit)
 	double	length;
 
 	length = vector_length(vec);
-	scale = length / unit;
+	scale = unit / length;
 
 	vector_scale(dest, vec, scale);
 }
